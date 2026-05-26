@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="QC Events: decoracion, alquiler de mobiliario, globos y organizacion de eventos en Santo Domingo, RD.">
+    <meta name="theme-color" content="#07080c">
+    <title>QC Events | Decoraci&oacute;n y Alquiler para Eventos</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/qc-logo.svg">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a class="brand" href="#inicio" aria-label="QC Events inicio">
+                <img src="assets/qc-logo.svg" alt="QC Events">
+                <span>
+                    <strong>QC Events</strong>
+                    <small>Decoraci&oacute;n & alquiler</small>
+                </span>
+            </a>
+
+            <nav class="desktop-nav" aria-label="Navegaci&oacute;n principal">
+                <a href="#disenador">Dise&ntilde;ador</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#proceso">Proceso</a>
+                <a href="#galeria">Galer&iacute;a</a>
+                <a href="#paquetes">Paquetes</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a class="social-chip" href="https://www.instagram.com/qc_events/" target="_blank" rel="noopener">IG</a>
+                <button class="quote-chip" id="openQuote" type="button">
+                    Cotizar <span id="cartCount">0</span>
+                </button>
+                <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menu" aria-controls="sideMenu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <aside class="side-menu" id="sideMenu" aria-label="Menu movil">
+        <button class="close-menu" id="closeMenu" type="button" aria-label="Cerrar menu">&times;</button>
+        <a href="#inicio">Inicio</a>
+        <a href="#disenador">Dise&ntilde;ador</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#galeria">Galer&iacute;a</a>
+        <a href="#paquetes">Paquetes</a>
+        <a href="#testimonios">Opiniones</a>
+        <a href="#contacto">Contacto</a>
+    </aside>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="quote-drawer" id="quoteDrawer" aria-label="Mi cotizaci&oacute;n">
+        <div class="drawer-header">
+            <div>
+                <p class="eyebrow">Solicitud</p>
+                <h2>Mi cotizaci&oacute;n</h2>
+            </div>
+            <button class="drawer-close" id="closeQuote" type="button" aria-label="Cerrar cotizaci&oacute;n">&times;</button>
+        </div>
+
+        <div class="quote-items" id="cartItems">
+            <div class="empty-cart">Tu cotizaci&oacute;n est&aacute; vac&iacute;a.</div>
+        </div>
+
+        <div class="drawer-footer">
+            <div class="quote-total">
+                <span>Total estimado</span>
+                <strong id="cartTotal">RD$0</strong>
+            </div>
+
+            <div class="checkout-form">
+                <input type="text" id="clienteNombre" placeholder="Tu nombre *" autocomplete="name">
+                <input type="tel" id="clienteWhatsapp" placeholder="WhatsApp *" autocomplete="tel">
+                <input type="text" id="clienteDireccion" placeholder="Direcci&oacute;n del evento *">
+                <input type="date" id="fechaEvento">
+                <textarea id="comentarioPedido" rows="3" placeholder="Detalles del evento..."></textarea>
+            </div>
+
+            <button class="btn btn-whatsapp" id="checkoutBtn" type="button">Enviar por WhatsApp</button>
+        </div>
+    </aside>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-slider" aria-hidden="true">
+                <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1800&q=85')"></div>
+                <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1800&q=85')"></div>
+                <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1800&q=85')"></div>
+            </div>
+            <div class="hero-shade"></div>
+
+            <div class="hero-inner container">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow">Eventos premium en Santo Domingo</p>
+                    <h1>Creamos ambientes elegantes para momentos inolvidables.</h1>
+                    <p>Decoraci&oacute;n, globos, alquiler de mobiliario y montaje profesional para bodas, cumplea&ntilde;os, baby showers, corporativos y celebraciones privadas.</p>
+
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#disenador">Dise&ntilde;ar mi sal&oacute;n</a>
+                        <button class="btn btn-secondary" type="button" data-open-quote>Armar cotizaci&oacute;n</button>
+                    </div>
+                </div>
+
+                <aside class="hero-card reveal">
+                    <p class="eyebrow">Experiencia QC</p>
+                    <h2>Dise&ntilde;o + log&iacute;stica + montaje</h2>
+                    <p>Un solo equipo para coordinar el look, los elementos y la ejecuci&oacute;n del evento.</p>
+                    <div class="mini-stats">
+                        <span><strong>6+</strong> servicios</span>
+                        <span><strong>24h</strong> respuesta</span>
+                        <span><strong>RD</strong> cobertura local</span>
+                    </div>
+                </aside>
+            </div>
+
+            <button class="hero-arrow left" id="prevHero" type="button" aria-label="Imagen anterior">&#8249;</button>
+            <button class="hero-arrow right" id="nextHero" type="button" aria-label="Imagen siguiente">&#8250;</button>
+        </section>
+
+        <section class="metrics-section">
+            <div class="container metrics-grid">
+                <article class="metric reveal">
+                    <strong>01</strong>
+                    <span>Dise&ntilde;o personalizado</span>
+                </article>
+                <article class="metric reveal">
+                    <strong>02</strong>
+                    <span>Renta y decoraci&oacute;n</span>
+                </article>
+                <article class="metric reveal">
+                    <strong>03</strong>
+                    <span>Montaje profesional</span>
+                </article>
+                <article class="metric note reveal">
+                    <span>Solicita tu cotizaci&oacute;n con servicios, fecha, ubicaci&oacute;n y detalles del evento.</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="section about-section" id="nosotros">
+            <div class="container split-layout">
+                <div class="section-copy reveal">
+                    <p class="eyebrow">Nosotros</p>
+                    <h2>Eventos con una imagen cuidada y una ejecuci&oacute;n clara.</h2>
+                    <p>Tomamos inspiraci&oacute;n editorial, estructura visual limpia y herramientas interactivas de tus proyectos anteriores para crear una experiencia m&aacute;s completa, elegante y f&aacute;cil de usar.</p>
+                </div>
+
+                <div class="feature-list reveal">
+                    <article><span>01</span><strong>Concepto visual</strong><p>Colores, estilo, piezas decorativas y composici&oacute;n.</p></article>
+                    <article><span>02</span><strong>Mobiliario</strong><p>Mesas, sillas, manteler&iacute;a y accesorios seg&uacute;n el evento.</p></article>
+                    <article><span>03</span><strong>Producci&oacute;n</strong><p>Entrega, montaje, ajuste final y desmontaje.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section salon-designer-section" id="disenador">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="eyebrow">Dise&ntilde;ador interactivo</p>
+                    <h2>Personaliza tu sal&oacute;n de evento en vivo.</h2>
+                    <p>Elige colores, mobiliario, cantidades y presupuesto. Cada cambio actualiza la vista del sal&oacute;n y el total estimado.</p>
+                </div>
+
+                <div class="designer-layout">
+                    <aside class="designer-panel reveal" aria-label="Menu de articulos para personalizar el salon">
+                        <div class="designer-group">
+                            <div class="designer-group-title">
+                                <span>01</span>
+                                <h3>Sal&oacute;n</h3>
+                            </div>
+                            <label class="field-label" for="roomShape">Forma del sal&oacute;n</label>
+                            <select id="roomShape" class="designer-select">
+                                <option value="classic">Cl&aacute;sico rectangular</option>
+                                <option value="wide">Amplio panor&aacute;mico</option>
+                                <option value="gallery">Galer&iacute;a moderna</option>
+                                <option value="round">Sal&oacute;n curvo</option>
+                            </select>
+                            <label class="field-label" for="roomSize">Tama&ntilde;o visual</label>
+                            <input class="range-control" type="range" id="roomSize" min="85" max="118" step="1" value="100">
+                            <div class="value-row"><span>Escala de la vista</span><strong id="roomSizeText">100%</strong></div>
+                            <div class="room-color-grid">
+                                <label><span>Pared</span><input type="color" id="wallColor" value="#151a27"></label>
+                                <label><span>Piso</span><input type="color" id="floorColor" value="#5a4634"></label>
+                                <label><span>Acento</span><input type="color" id="accentColor" value="#d9b66b"></label>
+                            </div>
+                        </div>
+
+                        <div class="designer-group">
+                            <div class="designer-group-title">
+                                <span>02</span>
+                                <h3>Globos</h3>
+                            </div>
+                            <label class="field-label" for="balloonColor">Color deseado</label>
+                            <div class="color-picker-row">
+                                <input type="color" id="balloonColor" value="#f7c8d8" aria-label="Elegir color de globos">
+                                <span id="balloonColorText">Rosado elegante</span>
+                            </div>
+                            <label class="field-label" for="balloonQty">Cantidad de globos</label>
+                            <input class="range-control" type="range" id="balloonQty" min="0" max="80" step="5" value="25">
+                            <div class="value-row"><span>RD$65 c/u</span><strong id="balloonQtyText">25</strong></div>
+                        </div>
+
+                        <div class="designer-group">
+                            <div class="designer-group-title">
+                                <span>03</span>
+                                <h3>Sillas</h3>
+                            </div>
+                            <label class="field-label" for="chairType">Tipo de silla</label>
+                            <select id="chairType" class="designer-select">
+                                <option value="tiffany" data-price="180">Tiffany dorada - RD$180</option>
+                                <option value="ghost" data-price="230">Ghost transparente - RD$230</option>
+                                <option value="garden" data-price="140">Jard&iacute;n blanca - RD$140</option>
+                                <option value="velvet" data-price="320">Velvet premium - RD$320</option>
+                            </select>
+                            <label class="field-label" for="chairQty">Cantidad de sillas</label>
+                            <input class="number-control" type="number" id="chairQty" min="0" max="220" value="40">
+                        </div>
+
+                        <div class="designer-group">
+                            <div class="designer-group-title">
+                                <span>04</span>
+                                <h3>Mesas</h3>
+                            </div>
+                            <label class="field-label" for="tableType">Tipo de mesa</label>
+                            <select id="tableType" class="designer-select">
+                                <option value="round" data-price="850">Redonda elegante - RD$850</option>
+                                <option value="imperial" data-price="1300">Imperial familiar - RD$1,300</option>
+                                <option value="cocktail" data-price="650">Coctel alta - RD$650</option>
+                            </select>
+                            <label class="field-label" for="tableQty">Cantidad de mesas</label>
+                            <input class="number-control" type="number" id="tableQty" min="0" max="40" value="8">
+                        </div>
+
+                        <div class="designer-group">
+                            <div class="designer-group-title">
+                                <span>05</span>
+                                <h3>Extras</h3>
+                            </div>
+                            <label class="option-toggle">
+                                <input type="checkbox" id="backdropToggle" checked>
+                                <span>Fondo decorativo</span>
+                                <strong>RD$3,500</strong>
+                            </label>
+                            <label class="option-toggle">
+                                <input type="checkbox" id="lightingToggle" checked>
+                                <span>Luces ambientales</span>
+                                <strong>RD$2,200</strong>
+                            </label>
+                            <label class="option-toggle">
+                                <input type="checkbox" id="centerpieceToggle">
+                                <span>Centros de mesa</span>
+                                <strong>RD$450 c/u</strong>
+                            </label>
+                        </div>
+
+                        <div class="budget-card">
+                            <label class="field-label" for="budgetInput">Tu presupuesto</label>
+                            <input class="number-control" type="number" id="budgetInput" min="0" step="500" value="25000">
+                            <div class="budget-meter" aria-hidden="true"><span id="budgetMeter"></span></div>
+                            <p id="budgetMessage">Presupuesto listo para comparar.</p>
+                        </div>
+                    </aside>
+
+                    <div class="salon-stage-wrap floating-open" id="floatingSalon">
+                        <button class="salon-float-tab" id="toggleFloatingSalon" type="button" aria-label="Mostrar u ocultar vista del salon">
+                            Vista del sal&oacute;n
+                        </button>
+                        <div class="salon-float-toolbar">
+                            <strong>Vista en tiempo real</strong>
+                            <div>
+                                <button class="mini-action" id="saveSalonView" type="button">Guardar</button>
+                                <button class="mini-action" id="keepSalonView" type="button">Seguir viendo</button>
+                            </div>
+                        </div>
+                        <div class="designer-summary">
+                            <div>
+                                <span>Total estimado</span>
+                                <strong id="designerTotal">RD$0</strong>
+                            </div>
+                            <div>
+                                <span>Dentro de presupuesto</span>
+                                <strong id="budgetStatus">Calculando</strong>
+                            </div>
+                            <button class="btn btn-primary" id="addDesignToQuote" type="button">Agregar dise&ntilde;o a cotizaci&oacute;n</button>
+                        </div>
+
+                        <div class="salon-stage" id="salonStage" aria-label="Vista previa del salon personalizado">
+                            <div class="room-wall">
+                                <div class="wall-panel"></div>
+                                <div class="decor-backdrop" id="decorBackdrop"></div>
+                                <div class="balloon-arch" id="balloonArch"></div>
+                                <div class="light light-left"></div>
+                                <div class="light light-right"></div>
+                            </div>
+                            <div class="room-floor">
+                                <div class="table-layer" id="tableLayer"></div>
+                                <div class="chair-layer" id="chairLayer"></div>
+                            </div>
+                            <div class="stage-caption">
+                                <span id="stageCaption">Sal&oacute;n elegante con montaje personalizado</span>
+                            </div>
+                        </div>
+
+                        <div class="itemized-total" id="itemizedTotal" aria-live="polite"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="servicios">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="eyebrow">Servicios</p>
+                    <h2>Todo lo que necesitas para transformar tu espacio.</h2>
+                    <p>Agrega servicios a la cotizaci&oacute;n y env&iacute;a tu solicitud directamente por WhatsApp.</p>
+                </div>
+
+                <div class="service-grid">
+                    <article class="service-card reveal" data-id="1" data-name="Decoraci&oacute;n de Cumplea&ntilde;os" data-price="4500">
+                        <div class="service-image birthday"></div>
+                        <div class="service-body">
+                            <p class="service-type">Celebraciones</p>
+                            <h3>Decoraci&oacute;n de Cumplea&ntilde;os</h3>
+                            <p>Montajes tem&aacute;ticos con globos, fondos, luces y mesas decoradas.</p>
+                            <div class="price-row"><strong>Desde RD$4,500</strong></div>
+                            <button class="btn-add" type="button">Agregar</button>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal" data-id="2" data-name="Alquiler Mesas y Sillas" data-price="150">
+                        <div class="service-image furniture"></div>
+                        <div class="service-body">
+                            <p class="service-type">Renta</p>
+                            <h3>Mesas & Sillas</h3>
+                            <p>Sillas Tiffany, mesas rectangulares, manteler&iacute;a y complementos.</p>
+                            <div class="price-row"><strong>Desde RD$150/unidad</strong></div>
+                            <button class="btn-add" type="button">Agregar</button>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal" data-id="3" data-name="Candy Bar" data-price="3000">
+                        <div class="service-image candy"></div>
+                        <div class="service-body">
+                            <p class="service-type">Detalle dulce</p>
+                            <h3>Candy Bar</h3>
+                            <p>Mesas de dulces con presentaci&oacute;n elegante y decoraci&oacute;n personalizada.</p>
+                            <div class="price-row"><strong>Desde RD$3,000</strong></div>
+                            <button class="btn-add" type="button">Agregar</button>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal" data-id="4" data-name="Baby Shower & Bautizos" data-price="6500">
+                        <div class="service-image baby"></div>
+                        <div class="service-body">
+                            <p class="service-type">Bienvenida</p>
+                            <h3>Baby Shower & Bautizos</h3>
+                            <p>Ambientaciones delicadas para celebrar con ternura, estilo y detalle.</p>
+                            <div class="price-row"><strong>Desde RD$6,500</strong></div>
+                            <button class="btn-add" type="button">Agregar</button>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal" data-id="5" data-name="Globos Personalizados" data-price="2000">
+                        <div class="service-image balloons"></div>
+                        <div class="service-body">
+                            <p class="service-type">Dise&ntilde;o visual</p>
+                            <h3>Globos Personalizados</h3>
+                            <p>Arcos, columnas, n&uacute;meros, letras, fondos y sets para fotos.</p>
+                            <div class="price-row"><strong>Desde RD$2,000</strong></div>
+                            <button class="btn-add" type="button">Agregar</button>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal" data-id="6" data-name="Bodas & Compromisos" data-price="12000">
+                        <div class="service-image wedding"></div>
+                        <div class="service-body">
+                            <p class="service-type">Ceremonias</p>
+                            <h3>Bodas & Compromisos</h3>
+                            <p>Montajes rom&aacute;nticos y elegantes para ceremonias y recepciones.</p>
+                            <div class="price-row"><strong>Desde RD$12,000</strong></div>
+                            <button class="btn-add" type="button">Agregar</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section process-section" id="proceso">
+            <div class="container process-layout">
+                <div class="section-copy reveal">
+                    <p class="eyebrow">Proceso</p>
+                    <h2>Del concepto al montaje final.</h2>
+                    <p>Un flujo claro inspirado en tus webs anteriores: consulta, propuesta, planificaci&oacute;n, montaje y acompa&ntilde;amiento.</p>
+                </div>
+
+                <div class="timeline">
+                    <article class="timeline-item reveal"><span>01</span><div><h3>Consulta inicial</h3><p>Escuchamos fecha, ubicaci&oacute;n, presupuesto, invitados y referencias.</p></div></article>
+                    <article class="timeline-item reveal"><span>02</span><div><h3>Propuesta creativa</h3><p>Definimos colores, mobiliario, globos, fondos y elementos decorativos.</p></div></article>
+                    <article class="timeline-item reveal"><span>03</span><div><h3>Coordinaci&oacute;n</h3><p>Organizamos tiempos de entrega, montaje, desmontaje y necesidades del lugar.</p></div></article>
+                    <article class="timeline-item reveal"><span>04</span><div><h3>Montaje</h3><p>Ejecutamos con cuidado para que todo est&eacute; listo antes del evento.</p></div></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section gallery-section" id="galeria">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="eyebrow">Galer&iacute;a</p>
+                    <h2>Ambientes que cuentan historias.</h2>
+                    <p>Visuales reales de referencia para inspirar el estilo de tu celebraci&oacute;n.</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <article class="gallery-item tall reveal gallery-wedding"><span>Bodas</span></article>
+                    <article class="gallery-item reveal gallery-birthday"><span>Cumplea&ntilde;os</span></article>
+                    <article class="gallery-item wide reveal gallery-corporate"><span>Corporativos</span></article>
+                    <article class="gallery-item reveal gallery-baby"><span>Baby showers</span></article>
+                    <article class="gallery-item tall reveal gallery-table"><span>Mobiliario</span></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section packages-section" id="paquetes">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="eyebrow">Paquetes</p>
+                    <h2>Opciones para empezar tu cotizaci&oacute;n.</h2>
+                    <p>Los montos son referencias base. Cada evento se ajusta seg&uacute;n ubicaci&oacute;n, fecha, cantidad de invitados y nivel de producci&oacute;n.</p>
+                </div>
+
+                <div class="package-grid">
+                    <article class="package-card reveal" data-id="7" data-name="Paquete Esencial" data-price="4500">
+                        <h3>Esencial</h3>
+                        <p>Decoraciones peque&ntilde;as y celebraciones &iacute;ntimas.</p>
+                        <strong>RD$4,500</strong>
+                        <ul>
+                            <li>Consulta inicial</li>
+                            <li>Dise&ntilde;o base</li>
+                            <li>Mesa decorativa</li>
+                            <li>Montaje sencillo</li>
+                        </ul>
+                        <button class="btn-add" type="button">Agregar paquete</button>
+                    </article>
+
+                    <article class="package-card featured reveal" data-id="8" data-name="Paquete Premium" data-price="12000">
+                        <p class="badge">M&aacute;s solicitado</p>
+                        <h3>Premium</h3>
+                        <p>Decoraci&oacute;n completa con globos, fondo y mobiliario.</p>
+                        <strong>RD$12,000</strong>
+                        <ul>
+                            <li>Dise&ntilde;o personalizado</li>
+                            <li>Fondo decorativo</li>
+                            <li>Mobiliario seleccionado</li>
+                            <li>Montaje profesional</li>
+                        </ul>
+                        <button class="btn-add" type="button">Agregar paquete</button>
+                    </article>
+
+                    <article class="package-card reveal">
+                        <h3>Exclusivo</h3>
+                        <p>Producci&oacute;n completa para bodas, XV, corporativos y celebraciones de alto detalle.</p>
+                        <strong>A medida</strong>
+                        <ul>
+                            <li>Concepto integral</li>
+                            <li>Ambientaci&oacute;n completa</li>
+                            <li>Mobiliario y accesorios</li>
+                            <li>Equipo dedicado</li>
+                        </ul>
+                        <button class="btn btn-secondary" type="button" data-open-quote>Consultar</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section testimonials-section" id="testimonios">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="eyebrow">Opiniones</p>
+                    <h2>Clientes que confiaron en QC Events.</h2>
+                </div>
+
+                <div class="testimonial-grid">
+                    <article class="testimonial reveal"><div class="stars">★★★★★</div><p>"La decoraci&oacute;n de mi cumplea&ntilde;os fue espectacular. Todo se vio fino y muy organizado."</p><strong>Carolina M.</strong></article>
+                    <article class="testimonial reveal"><div class="stars">★★★★★</div><p>"Rent&eacute; sillas y mesas para mi boda. Puntuales, responsables y con excelente trato."</p><strong>Andrea L.</strong></article>
+                    <article class="testimonial reveal"><div class="stars">★★★★★</div><p>"El baby shower qued&oacute; hermoso. Captaron exactamente la idea que quer&iacute;a."</p><strong>Laura R.</strong></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-section" id="contacto">
+            <div class="container contact-layout">
+                <div class="section-copy reveal">
+                    <p class="eyebrow">Contacto</p>
+                    <h2>Hablemos de tu pr&oacute;ximo evento.</h2>
+                    <p>Completa el formulario o usa el cotizador. Se generar&aacute; un mensaje directo para WhatsApp con la informaci&oacute;n del evento.</p>
+
+                    <div class="contact-list">
+                        <a href="https://wa.me/18099816085" target="_blank" rel="noopener">WhatsApp: (809) 981-6085</a>
+                        <a href="https://www.instagram.com/qc_events/" target="_blank" rel="noopener">Instagram: @qc_events</a>
+                        <a href="https://www.facebook.com/qceventsrd" target="_blank" rel="noopener">Facebook: QC Events RD</a>
+                        <span>Santo Domingo, RD</span>
+                    </div>
+                </div>
+
+                <form class="contact-form reveal" id="contactForm">
+                    <div class="form-row">
+                        <label>Nombre<input type="text" id="formNombre" placeholder="Tu nombre"></label>
+                        <label>Tel&eacute;fono<input type="tel" id="formTelefono" placeholder="Tu WhatsApp"></label>
+                    </div>
+                    <div class="form-row">
+                        <label>Tipo de evento
+                            <select id="formTipo">
+                                <option value="">Seleccionar</option>
+                                <option>Boda</option>
+                                <option>Cumplea&ntilde;os</option>
+                                <option>Baby Shower</option>
+                                <option>Evento corporativo</option>
+                                <option>Otro</option>
+                            </select>
+                        </label>
+                        <label>Fecha<input type="date" id="formFecha"></label>
+                    </div>
+                    <label>Detalles<textarea id="formMensaje" rows="5" placeholder="Estilo, colores, invitados, lugar..."></textarea></label>
+                    <button class="btn btn-primary" type="submit">Enviar consulta por WhatsApp</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <a class="brand footer-brand" href="#inicio">
+                    <img src="assets/qc-logo.svg" alt="QC Events">
+                    <span><strong>QC Events</strong><small>Momentos inolvidables</small></span>
+                </a>
+                <p>Decoraci&oacute;n, organizaci&oacute;n y alquiler para eventos en Santo Domingo, RD.</p>
+            </div>
+            <nav aria-label="Enlaces de pie">
+                <a href="#servicios">Servicios</a>
+                <a href="#proceso">Proceso</a>
+                <a href="#galeria">Galer&iacute;a</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <div class="footer-contact">
+                <a href="https://wa.me/18099816085" target="_blank" rel="noopener">(809) 981-6085</a>
+                <a href="https://www.instagram.com/qc_events/" target="_blank" rel="noopener">@qc_events</a>
+                <span>&copy; 2026 QC Events</span>
+            </div>
+        </div>
+    </footer>
+
+    <a class="whatsapp-float" href="https://wa.me/18099816085" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">WA</a>
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Subir al inicio">&#8593;</button>
+    <div class="toast" id="toast">Servicio agregado</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
